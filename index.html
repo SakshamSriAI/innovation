@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <title>Saksham Portfolio
+    </title>
+    <style>
+        body{
+            margin:0;
+            font-family:"Source Sans 3", "Segoe UI", Arial, sans-serif;
+        }
+       
+        .page {
+        background: #edf2f0;
+        color: #1b2a6b;
+        font-size: 17px;
+        line-height: 1.65;
+        min-height: 100vh;
+        transition: background 0.3s, color 0.3s;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2px;
+            background: #edf2eb;
+            border-bottom: 1px solid #b6c8c1;
+            z-index: 1000;
+        }
+        ul{
+            display:flex;
+            align-items:center;
+            gap:20px;
+            list-style:none;
+            margin-right:25px;
+            font-size:15px;
+        }
+        a{
+            text-decoration:none;
+        }
+        .logo{
+            margin-left:25px;
+            font-size:20px;
+            
+        }
+        .logo a{
+            color:#1b2a6b;
+        }
+        .logo a:hover{
+            color:red;
+        }
+       ul a {
+            position: relative;
+            text-decoration: none;
+            color: #1b2a6b;
+            font-size: 16px;
+            font-weight: 600;
+            padding-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+        ul a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #c93d33;
+
+            transform: scaleX(0);
+            transform-origin: left;
+
+            transition: transform 0.3s ease;
+        }
+        ul a:hover {
+            color: #c93d33;
+        }
+
+        ul a:hover::after {
+            transform: scaleX(1);
+        }
+        .page-switch {
+            font-size: 12.4px;
+            font-weight: 600;
+            padding: 10px 12px;
+            border: 1px solid #1b2a6b;
+            border-radius: 999px;
+            background: transparent;
+            color: #1b2a6b;
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+        }
+
+        .page-switch:hover {
+            background: #1b2a6b;
+            color: white;
+            transform: translateY(-2px);
+        }
+        nav div ul a{
+                font-weight: 600;
+                font-size: 15.2px;
+                padding-bottom: 2px;
+                border-bottom: 2px solid transparent;
+        }
+        .details {
+            position: relative;
+            background-color: #edf2f0;
+
+            background-image: url("./Minimalist Graph Paper with Red Margin.png");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            padding: 96px 0 80px;
+            border-bottom: 1px solid #b6c8c1;
+        }
+        .items{
+            max-width:  1000px; 
+            margin: 0 178.5px; 
+            padding: 0 160px;
+            font-size:17px;
+        }
+        .name{
+            font-family:"Bricolage Grotesque", "Trebuchet MS", sans-serif;
+            font-size:80px;
+            margin:0px 0px 10px;
+        }
+        .description{
+            color:#46538a;
+            font-size:20px;
+        }
+        .btnfirst{
+            color: #edf2f0;
+            background-color: #1b2a6b;
+            display: inline-block;
+            cursor: pointer;
+            font: 600 16px ;
+            text-decoration: none;
+            padding: 11.2px 22.4px;
+            border: 1.5px solid #1a2b6b;
+            border-radius: 6px;
+            transition: transform 0.2s, background 0.2s, color 0.2s;
+        }
+        .btn {
+            display: inline-block;
+            color:#1b2a6b;
+            cursor: pointer;
+            font: 600 1rem ;
+            text-decoration: none;
+            background: #ffffff;
+            padding: 0.7rem 1.4rem;
+            border: 1.5px solid #1a2b6b;
+            border-radius: 6px;
+            transition: transform 0.2s, background 0.2s, color 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px); 
+            color: #1b2a6b;
+        }
+        .btnfirst:hover{ 
+            color: #edf2f0; 
+            background-color: #c93d33; 
+            border-color:#c93d33; 
+            transform: translateY(-2px);
+        }
+
+        .college-card {
+            background-color: #ffffff;
+            padding: 24px;
+            border-radius: 12px;
+            width: fit-content;
+            border:1px solid #b6c8c1;
+        }
+
+        table {
+            border-collapse: collapse;
+            font-family: Times New Roman;
+            font-size: 17px;
+            color: #1B2A6B;
+        }
+
+        td {
+            padding: 8px 0;
+           
+        }
+
+        td:first-child {
+            padding-right: 24px;
+        }
+
+        td:last-child {
+            padding-left: 8px;
+            font-weight: bold;
+        }
+         .design{
+            max-width: 1000px;
+            margin: 50px 178.5px;
+            padding: 0px 160px;
+            display:grid;
+            grid-template-columns: 3fr 2fr;
+            align-items:start;
+            gap:60px;
+        }
+        #skills{
+            background-color:#e1eae7;
+        }
+        .skills_des{
+            max-width: 1000px;
+            margin: 50px 178.5px;
+            padding: 0px 160px;
+        }
+        .skills{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap: 24px 48px;
+        }
+        label{
+            font-size:17px;
+            font-weight:300;
+            cursor:default;
+        }
+        progress {
+            width: 100%;
+            height: 12px;
+            margin-top: 6.4px;
+            appearance: none;
+            border: none;
+            border-radius: 6px;
+            background: #b6c8c1;
+            overflow: hidden;
+        }
+        progress::-webkit-progress-bar {
+            background: #b6c8c1;
+            border-radius: 6px;
+        }
+
+        progress::-webkit-progress-value {
+            background: #1b2a6b;
+            border-radius: 6px;
+        }
+        .note {
+            margin-top: 32px;
+            color: #46538a;
+            font-family:"Source Sans 3", "Segoe UI", Arial, sans-serif;
+        }
+        .title2{
+            margin-top:60px;
+            font-family:"Bricolage Grotesque", "Trebuchet MS", sans-s
+        }
+        .title{
+            font-family:"Bricolage Grotesque", "Trebuchet MS", sans-s
+        }
+        .sec{
+            max-width: 1000px;
+            margin: 50px 178.5px;
+            padding: 0px 160px;
+        }
+        .journey {
+            margin-left: 8px;
+            padding-left: 27px;
+            border-left: 2px solid #263b70;
+        }
+        .journey li {
+            padding-bottom: 25px;
+            padding-left: 0;
+            position: relative;
+            list-style: none;
+        }
+        .journey li::before {
+            content: "";
+            position: absolute;
+            left: -36px;
+            top: 2px;
+
+            width: 13px;
+            height: 13px;
+
+            border-radius: 50%;
+            background: #263b70;
+            border: 2px solid #edf2f0;
+        }
+        .journey h3 {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin: 0 0 5px;
+        }
+        .journey p {
+            font-size: 14px;
+            line-height: 1.7;
+            margin: 0;
+        }
+        .journey .next::before {
+            background: #edf2f0;
+            border: 3px solid #c84b4b;
+            width: 12px;
+            height: 12px;
+        }
+
+        .journey .next h3 {
+            color: #c84b4b;
+        }
+
+        .journey li:last-child {
+            padding-bottom: 0;
+        }
+        .journey{
+            padding-bottom:40px;
+        }
+        .journey li h3{
+            font-family:"Bricolage Grotesque", "Trebuchet MS", sans-s
+        }
+        .journey li p{
+            font-family:"Source Sans 3", "Segoe UI", Arial, sans-serif;
+        }
+        .sec h2{
+            font-family:"Bricolage Grotesque", "Trebuchet MS", sans-s
+        }
+        .sec .intro{
+            font-family:"Bricolage Grotesque", "Trebuchet MS", sans-s
+        }
+        .skills label{
+            font-family:"Bricolage Grotesque", "Trebuchet MS", sans-s
+        }
+        .project{
+             max-width: 1000px;
+            margin: 50px 178.5px;
+            padding: 0px 160px;
+        }
+        .card {
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+        background: #ffffff;
+        border: 1px solid  #b6c8c1;
+        border-top: 4px solid #1b2a6b;
+        border-radius: 8px;
+        transition: transform 0.25s, border-color 0.25s;
+        }
+        .card h3{
+            font-family:"Bricolage Grotesque", "Trebuchet MS", sans-s
+        }
+        .card p{
+            font-family:"Source Sans 3", "Segoe UI", Arial, sans-serif;
+        }
+        .cards {
+             display: grid; 
+             grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px; 
+        }
+        .card:hover { 
+            transform: translateY(-5px);
+            border-top-color: #c93d33;
+        }
+        .card:hover { 
+            transform: translateY(-5px); 
+            border-top-color:  #c93d33;
+        }
+        .card p {
+            color: #46538a; 
+            margin: 4px 0 16px; 
+        }
+        .card a { 
+            margin-top: auto; 
+            font-weight: 600; 
+        }
+        .tags { 
+            list-style: none; 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 6.4px; 
+            margin-bottom: 16px;
+        }
+        .tags li { 
+            font-size: 13.6px;
+            padding: 1.6px 9.6px; 
+            border: 1px solid #b6c8c1;
+            border-radius: 999px; 
+            background: #edf2f0;
+        }
+        form label { 
+            display: block; 
+            font-weight: 600; 
+            margin: 20px 0 5.6px;   
+        }
+        input, textarea {
+            width: 100%;
+            font: 16px "Source Sans 3", "Segoe UI", Arial, sans-serif;
+            color: #1b2a6b;
+            background: #ffffff;
+            padding: 11.2px 14.4px; 
+            border: 1.5px solid #b6c8c1;
+            border-radius: 6px;
+            transition: border-color 0.2s;
+        }
+        input::placeholder, textarea::placeholder {
+             color: #46538a;
+             opacity: 0.7; 
+            }
+        input:focus, textarea:focus { 
+            border-color: #1b2a6b;
+            outline: none; 
+            box-shadow: 0 0 0 3px #cddcd6;
+        }
+        input:not(:placeholder-shown):valid, textarea:not(:placeholder-shown):valid {
+             border-color: #1f7a4d;
+            }
+        input:not(:placeholder-shown):invalid, textarea:not(:placeholder-shown):invalid {
+             border-color: #c93d33;
+            }
+        form button {
+             margin-top: 24px; 
+            }
+        .narrow { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 0 24px;  
+            max-width: 640px; 
+        }
+        #projects{
+            background-color:#e1eae7;
+            padding:30px 0px 30px;
+        }
+        .foot{
+            max-width: 1000px;
+            margin: 50px 178.5px;
+            padding: 0px 160px;
+        }
+        .footer { 
+            padding: 32px 0; 
+            border-top: 1px solid #b6c8c1;
+            color:  #46538a;
+            font-size: 15.2px; 
+        }
+        .footer .foot { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: space-between; 
+            gap: 8px; 
+        }
+        .footer p + p { 
+            margin-top: 0;
+         }
+        .intro{
+            font-family:"Source Sans 3", "Segoe UI", Arial, sans-serif;
+        }
+        label{
+            font-family:"Bricolage Grotesque", "Trebuchet MS", sans-s
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <nav>
+                <div class="logo"><a href=""><b>Saksham Srivastava</b></a></div>
+                <div>
+                    <ul>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Skills</a></li>
+                        <li><a href="">Journey</a></li>
+                        <li><a href="">Projects</a></li>
+                        <li><a href="">Contacts</a></li>
+                        <li><button class="page-switch"><b>Switch Page</b></button></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="details">
+                <div class="items">
+                    <h1 class="name">Saksham Srivastava</h1>
+                    <p class="description">First-year student learning full stack web development. This page is <br> my notebook: what I've learned, what I've built, and what's next.</p>
+                    <p class="buttons">
+                        <a class="btnfirst" href="#projects">See my projects</a>
+                        <a class="btn" href="" download>Download Resume</a>
+                    </p>
+                </div>
+
+            </section>
+            <section id="about" class="design">
+                <div>
+                    <h1 class="title">About me</h1>
+                        <p>I’m a 2026 batch student who enjoys turning a blank page into something<br> people can click, scroll, and use. I started with how the web works, then moved<br> on to HTML, forms, Bootstrap, and modern CSS layouts.</p>
+                        <p>Right now I’m practising by rebuilding real websites, and next I’m moving to <br>JavaScript so my pages can respond to people.</p>
+                </div>
+
+                <div class="college-card">
+                    <table>
+                        <tr>
+                        <td>College</td>
+                        <td>Medhavi SKills University</td>
+                        </tr>
+                        <tr>
+                        <td>Batch</td>
+                        <td>2026</td>
+                        </tr>
+                        <tr>
+                        <td>Studying</td>
+                        <td>Full stack web development</td>
+                        </tr>
+                        <tr>
+                        <td>Based in</td>
+                        <td>Lucknow, Uttar Pradesh</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </section>
+            <section id="skills" class="section.alt">
+                
+                <div class="skills_des">
+                    <h1 class="title2">Skills</h2>
+                    <div class="skills">
+                        <label>
+                            HTML5 and Forms<br>
+                            <progress value="90" max="100">90%</progress>
+                        </label>
+                        <label>
+                            CSS3 and Selectors<br>
+                            <progress value="85" max="100">85%</progress>
+                        </label>
+                        <label>
+                            Flexbox and Grid<br>
+                            <progress value="80" max="100">80%</progress>
+                        </label>
+                        <lable>
+                            Bootstrap<br>
+                            <progress value="80" max="100">80%</progress>
+                        </lable>
+                        <p class="note">Up next: JavaScript, then Node.js and databases.</p>
+                    </div>
+                </div>
+
+            </section>
+             <section id="journey" class="section">
+                <div class="sec">
+                    <h2>My learning journey</h2>
+                    <p class="intro">Everything below is something I’ve actually studied, in the order I learned it.</p>
+                    <ol class="journey">
+                    <li>
+                        <h3>How the web works</h3>
+                        <p>Client and server, requests and responses, IP addresses, and how a browser turns HTML into a page.</p>
+                    </li>
+                    <li>
+                        <h3>HTML</h3>
+                        <p>Semantic layout, lists, images, links, tables, and iframes. Built a Netflix header and an Amazon home page.</p>
+                    </li>
+                    <li>
+                        <h3>Forms and validation</h3>
+                        <p>Input types, GET and POST, and regular expressions in the <code>pattern</code> attribute for passwords and phone numbers.</p>
+                    </li>
+                    <li>
+                        <h3>Bootstrap</h3>
+                        <p>The grid system, cards, modals, carousel, accordion, and navbar. Built a registration page and an EMI calculator.</p>
+                    </li>
+                    <li>
+                        <h3>CSS</h3>
+                        <p>Selectors, the box model, positions, Flexbox, Grid, media queries, transforms, and transitions.</p>
+                    </li>
+                    <li class="next">
+                        <h3>JavaScript</h3>
+                        <p>Starting soon, so my pages can react to clicks, forms, and data.</p>
+                    </li>
+                    </ol>
+                </div>
+            </section>
+             <section id="projects" class="section alt">
+                <div class="project">
+                    <h1 class="title2">Projects</h1>
+                    <div class="cards">
+                    <article class="card">
+                        <h3>Netflix header clone</h3>
+                        <p>A semantic header with a logo, navigation, and sign-in button.</p>
+                        <ul class="tags">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+                        <a href="#">View project</a>
+                    </article>
+                    <article class="card">
+                        <h3>Amazon home page</h3>
+                        <p>Product cards, fluid images, and a responsive grid layout.</p>
+                        <ul class="tags">
+                            <li>HTML</li>
+                            <li>Grid</li>
+                        </ul>
+                        <a href="#">View project</a>
+                    </article>
+                    <article class="card">
+                        <h3>YouTube clone</h3>
+                        <p>Page navigation and video playback using iframes.</p>
+                        <ul class="tags">
+                            <li>iframe</li>
+                            <li>Flexbox</li>
+                        </ul>
+                        <a href="#">View project</a>
+                    </article>
+                    <article class="card">
+                        <h3>EMI calculator</h3>
+                        <p>A clean form built with Bootstrap inputs and buttons.</p>
+                        <ul class="tags">
+                            <li>Bootstrap</li>
+                            <li>Forms</li>
+                        </ul>
+                        <a href="#">View project</a>
+                    </article>
+                    <article class="card">
+                        <h3>Registration page</h3>
+                        <p>A validated sign-up form with regex rules and live valid and invalid styling.</p>
+                        <ul class="tags">
+                            <li>Forms</li>
+                            <li>Regex</li>
+                        </ul>
+                        <a href="#">View project</a>
+                    </article>
+                    <article class="card">
+                        <h3>This portfolio</h3>
+                        <p>Built with only HTML and CSS, including the dark page toggle.</p>
+                        <ul class="tags">
+                            <li>:checked</li>
+                            <li>Variables</li>
+                        </ul>
+                        <a href="#top">Back to top</a>
+                    </article>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="section">
+                <div class="narrow">
+                    <h1 class="title2">Say hello</h1>
+                    <p class="intro">Have a project idea or a question? Send me a message.</p>
+                    <form action="mailto:you@example.com" method="post" enctype="text/plain">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Aarav Singh" required minlength="2">
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="name@college.edu" required>
+
+                    <label for="msg">Message</label>
+                    <textarea id="msg" name="message" rows="5" placeholder="Tell me about your idea" required minlength="10"></textarea>
+
+                    <button type="submit" class="btn primary">Send message</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+          <footer class="footer">
+            <div class="foot">
+                <p>Built with HTML and CSS only. © 2026 Your Name.</p>
+                <p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:you@example.com">Email</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
